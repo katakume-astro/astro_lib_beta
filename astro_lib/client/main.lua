@@ -9,11 +9,6 @@ end
 -- exports['astro_lib']:spawnobject('prop_cs_cuffs_01', vector3(404.9496, -1634.0852, 29.2920))
 exports('spawnobject', spawnobject) 
 
-
-
-
-
-
 function spawnvehicle(vehicle, coords, heading)
     ESX.Game.SpawnVehicle(vehicle, coords, heading, function(vehicle)
         if Config.TaskWarpPedIntoVehicle == true then TaskWarpPedIntoVehicle(PlayerPedId(), vehicle, -1)

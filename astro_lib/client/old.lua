@@ -11,6 +11,9 @@ function notify(type, msg, duration)
 	end
 end
 
+
+-- exports['astro_lib']:notify('inform', 'test', 5000)
+exports('notify', notify) 
 RegisterNetEvent('astro_lib:notify')
 AddEventHandler('astro_lib:notify', function(type, msg, duration)
 	notify(type, msg, duration)

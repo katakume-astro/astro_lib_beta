@@ -1,0 +1,5 @@
+RegisterNetEvent('astro:cheater')
+AddEventHandler('astro:cheater', function()
+local xPlayer = ESX.GetPlayerFromId(source)
+xPlayer.kick('[ASTRO] Stop')
+end)

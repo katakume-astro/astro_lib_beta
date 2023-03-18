@@ -21,7 +21,7 @@ end
 -- exports['astro_lib']:spawnvehicle('blista', vector3(402.7710, -1633.7021, 29.2919), 258.1375)
 exports('spawnvehicle', spawnvehicle) 
 
-function spawnped(ped, coords, heading)
+function spawnped(ped, coords, heading) --[[DO NOT run this function every tick]]--
         if lib.requestModel(ped, 1000) then 
             npc = CreatePed(1, GetHashKey(ped), coords, heading, false, false)
             FreezeEntityPosition(npc, true)

@@ -28,7 +28,7 @@ function spawnped(ped, coords, heading)
             SetEntityInvincible(npc, true)
             SetBlockingOfNonTemporaryEvents(npc, true)
         else 
-            print('Couldn\'t load npc')
+            print('Couldn\'t load npc : '..npc..'')
         end
 end
     

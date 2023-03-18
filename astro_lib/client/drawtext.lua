@@ -31,22 +31,6 @@ local function keyPressed()
     end)
 end
 
-RegisterNetEvent('astro-lib:client:DrawText', function(text, position)
-    drawText(text, position)
-end)
-
-RegisterNetEvent('astro-lib:client:ChangeText', function(text, position)
-    changeText(text, position)
-end)
-
-RegisterNetEvent('astro-lib:client:HideText', function()
-    hideText()
-end)
-
-RegisterNetEvent('astro-lib:client:KeyPressed', function()
-    keyPressed()
-end)
---[[CLIENT SIDE]]--
 exports('DrawText', drawText) -- exports['astro_lib']:DrawText('[E] button', 'left')
 exports('ChangeText', changeText) -- exports['astro_lib']:ChangeText('[E] button', 'left')
 exports('HideText', hideText) -- exports['astro_lib']:HideText()

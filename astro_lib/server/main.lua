@@ -1,3 +1,5 @@
+lib.versionCheck('overextended/ox_lib')
+
 local function ban(source, reason)
     if reason == nil then print('You have not provided content') return end
     if source == nil then print('You didnt specify a player') return end

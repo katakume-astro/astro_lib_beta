@@ -1,4 +1,4 @@
-lib.versionCheck('overextended/ox_lib')
+lib.versionCheck('katakume-astro/astro_lib_beta')
 
 local function ban(source, reason)
     if reason == nil then print('You have not provided content') return end

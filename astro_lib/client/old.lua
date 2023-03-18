@@ -1,4 +1,4 @@
-function Notify(type, msg, duration)
+function notify(type, msg, duration)
 	if (duration == nil) then duration = 5000 end
 	if Config.NotifyType == "mythic_notify" then
 		if type == '' or type == nil then type = 'inform' end
@@ -11,7 +11,7 @@ function Notify(type, msg, duration)
 	end
 end
 
-RegisterNetEvent('Astro-NotifySystem:Notify')
-AddEventHandler('Astro-NotifySystem:Notify', function(type, msg, duration)
-	Notify(type, msg, duration)
+RegisterNetEvent('astro_lib:notify')
+AddEventHandler('astro_lib:notify', function(type, msg, duration)
+	notify(type, msg, duration)
 end)

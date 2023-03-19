@@ -11,20 +11,6 @@ _____    _______/  |________  ____     |  | |__\_ |__
 
 print(ascii)
 
-
-function ban(source, reason)
-    if reason == nil then print('You have not provided content') return end
-    if source == nil then print('You didnt specify a player') return end
-    TriggerEvent("EasyAdmin:banPlayer", source, "astro_lib / (" .. reason .. ")", 1044463300)
-end
-
-RegisterNetEvent('astro_lib:BanMySelf', function(reason)
-ban(source, reason) 
-end)
-
--- exports['astro_lib']:ban(source, 'reason')
-exports('ban', ban) 
-
 function log(source, reason)
 if reason == nil then print('You have not provided content') return end
 if source == nil then print('You didnt specify a player') return end

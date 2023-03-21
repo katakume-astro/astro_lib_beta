@@ -22,6 +22,25 @@ end
 -- exports['astro_lib']:spawnvehicle('blista', vector3(402.7710, -1633.7021, 29.2919), 258.1375)
 exports('spawnvehicle', spawnvehicle) 
 
+function deletevehicle()
+    if cache.vehicle then
+        SetEntityAsMissionEntity(cache.vehicle, true, true)
+        DeleteVehicle(cache.vehicle)
+    else
+        local pcoords = GetEntityCoords(cache.ped)
+        local vehicles = GetGamePool('CVehicle')
+        for _, v in pairs(vehicles) do
+            if #(pcoords - GetEntityCoords(v)) <= 5.0 then
+                SetEntityAsMissionEntity(v, true, true)
+                DeleteVehicle(v)
+            end
+        end
+    end
+end
+
+-- exports['astro_lib']:deletevehicle()
+exports('deletevehicle', deletevehicle) 
+
 function spawnped(ped, coords, heading) --[[DO NOT run this function every tick]]--
         if lib.requestModel(ped, 1000) then 
             npc = CreatePed(1, GetHashKey(ped), coords, heading, false, false)

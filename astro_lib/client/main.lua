@@ -11,6 +11,7 @@ exports('spawnobject', spawnobject)
 
 function spawnvehicle(vehicle, coords, heading)
     ESX.Game.SpawnVehicle(vehicle, coords, heading, function(vehicle)
+        SetVehicleFuelLevel(vehicle, 100.0)
         if Config.TaskWarpPedIntoVehicle == true then TaskWarpPedIntoVehicle(PlayerPedId(), vehicle, -1)
         elseif Config.debug == true then
         print(vehicle, 'spawned by astro_lib')

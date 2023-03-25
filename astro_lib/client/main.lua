@@ -1,6 +1,7 @@
 function spawnobject(object, coords)
     ESX.Game.SpawnLocalObject(object, coords, function(object)
         FreezeEntityPosition(object, true)
+        PlaceObjectOnGroundProperly(object)
         if Config.debug == true then
         print(object, 'spawned by astro_lib')
         end

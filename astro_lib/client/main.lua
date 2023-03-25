@@ -14,10 +14,9 @@ exports('spawnobject', spawnobject)
 
 function spawnvehicle(vehicle, coords, heading)
   ESX.Game.SpawnVehicle(vehicle, coords, heading, function(vehicle)
-   local plate = GetVehicleNumberPlateText(vehicle)
     SetVehicleFuelLevel(vehicle, 100.0)
         if Config.AddCarKeys == true then 
-                TriggerServerEvent('luke_garages:dodajkluczyki', plate) -- your event or export to add car keys
+                TriggerServerEvent('luke_garages:dodajkluczyki', GetVehicleNumberPlateText(vehicle)) -- your event or export to add car keys
         elseif Config.TaskWarpPedIntoVehicle == true then
                 TaskWarpPedIntoVehicle(cache.ped, vehicle, -1)
         elseif Config.debug == true then

@@ -17,7 +17,7 @@ function spawnvehicle(vehicle, coords, heading)
    local plate = GetVehicleNumberPlateText(vehicle)
     SetVehicleFuelLevel(vehicle, 100.0)
         if Config.AddCarKeys == true then 
-                TriggerServerEvent('luke_garages:dodajkluczyki', plate)
+                TriggerServerEvent('luke_garages:dodajkluczyki', plate) -- your event or export to add car keys
         elseif Config.TaskWarpPedIntoVehicle == true then
                 TaskWarpPedIntoVehicle(cache.ped, vehicle, -1)
         elseif Config.debug == true then

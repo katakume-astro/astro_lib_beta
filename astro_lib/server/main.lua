@@ -1,7 +1,3 @@
-lib.versionCheck('katakume-astro/astro_lib_beta')
-
-
-
 local ascii = [[                 __                    .__  ._____.    
 _____    _______/  |________  ____     |  | |__\_ |__  
 \__  \  /  ___/\   __\_  __ \/  _ \    |  | |  || __ \ 
@@ -34,3 +30,21 @@ end
 
 -- exports['astro_lib']:log(source, 'reason')
 exports('log', log) 
+
+CreateThread(function()
+	--version check with github latest version
+	PerformHttpRequest(
+		"https://raw.githubusercontent.com/[User]/[Repo]/main/fxmanifest.lua",
+		function(err, text, headers)
+			if err ~= 200 then
+				return
+			end
+			local version = GetResourceMetadata(GetCurrentResourceName(), "version")
+			local latestVersion = string.match(text, '%sversion \"(.-)\"')
+			if version ~= latestVersion then
+				print("Resource is outdated. Please update " .. GetCurrentResourceName() .. " to the newest version.")
+			end
+		end,
+		"GET"
+	)
+end)

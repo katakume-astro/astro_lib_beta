@@ -32,10 +32,7 @@ end
 exports('log', log) 
 
 CreateThread(function()
-	--version check with github latest version
-	PerformHttpRequest(
-		"https://raw.githubusercontent.com/[User]/[Repo]/main/fxmanifest.lua",
-		function(err, text, headers)
+	PerformHttpRequest("https://raw.githubusercontent.com/katakume-astro/astro_lib_beta/main/astro_lib/fxmanifest.lua", function(err, text, headers)
 			if err ~= 200 then
 				return
 			end

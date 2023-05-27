@@ -61,7 +61,7 @@ end
 -- exports['astro_lib']:spawnped('csb_anita', vector3(402.7710, -1633.7021, 29.2919), 258.1375)
 exports('spawnped', spawnped)
 
-function 3dtext(coords, str)
+function text(coords, str)
     local onScreen, worldX, worldY = World3dToScreen2d(coords.x, coords.y, coords.z)
     local camCoords = GetGameplayCamCoord()
     local scale = 200 / (GetGameplayCamFov() * #(camCoords - coords))
@@ -79,5 +79,5 @@ function 3dtext(coords, str)
     end
 end
 
--- exports['astro_lib']:3dtext(GetEntityCoords(cache.ped), 'test')
-exports('3dtext', 3dtext)
+-- exports['astro_lib']:text(GetEntityCoords(cache.ped), 'test')
+exports('text', text)

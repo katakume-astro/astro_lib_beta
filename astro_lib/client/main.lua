@@ -61,7 +61,7 @@ end
 -- exports['astro_lib']:spawnped('csb_anita', vector3(402.7710, -1633.7021, 29.2919), 258.1375)
 exports('spawnped', spawnped)
 
-function text(coords, str)
+function text(coords, str) --[[Run this function every tick]]--
     local onScreen, worldX, worldY = World3dToScreen2d(coords.x, coords.y, coords.z)
     local camCoords = GetGameplayCamCoord()
     local scale = 200 / (GetGameplayCamFov() * #(camCoords - coords))

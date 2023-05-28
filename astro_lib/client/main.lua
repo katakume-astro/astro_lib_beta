@@ -80,4 +80,4 @@ function text(coords, str) --[[Run this function every tick]]--
 end
 
 -- exports['astro_lib']:text(GetEntityCoords(cache.ped), 'test')
-exports('text', text)
+exports('text', text) -- 3d text
